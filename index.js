@@ -5,6 +5,7 @@ const Employee = require("./models/employee");
 
 const main = async () => {
   connection.connect();
+  await Department.create("hardware");
   const departments = await Department.getAll();
   console.log(departments);
   const roles = await Role.getAll();

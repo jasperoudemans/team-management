@@ -7,4 +7,10 @@ const getAll = async () => {
   return departments;
 };
 
-module.exports = { getAll };
+const create = async (dptname) => {
+  await connection
+    .promise()
+    .query("INSERT INTO department (name) VALUES (?)", [dptname]);
+};
+
+module.exports = { getAll, create };
