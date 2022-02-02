@@ -1,12 +1,9 @@
 const connection = require("./config/db_connection");
-const Department = require("./models/department");
-const Role = require("./models/role");
-const Employee = require("./models/employee");
 const inquirer = require("inquirer");
 const viewAllDepartments = require("./controllers/viewAllDepartments");
 const viewAllRoles = require("./controllers/viewAllRoles");
 const viewAllEmployees = require("./controllers/viewAllEmployees");
-const cTable = require("console.table");
+require("console.table");
 const addDepartment = require("./controllers/addDepartment");
 const addRole = require("./controllers/addRole");
 const addEmployee = require("./controllers/addEmployee");
