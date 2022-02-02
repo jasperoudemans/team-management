@@ -19,10 +19,13 @@ const getAll = async () => {
   return employees;
 };
 
-const create = async (f_name, l_name, role, manager_fname) => {
+const create = async (f_name, l_name, role, manager_fname, manager_lname) => {
   const [manager_id] = await connection
     .promise()
-    .query("SELECT id FROM employee WHERE first_name = ?", [manager_fname]);
+    .query("SELECT id FROM employee WHERE first_name = ? AND last_name = ?", [
+      manager_fname,
+      manager_lname,
+    ]);
   console.log(manager_id);
   const [role_id] = await connection
     .promise()

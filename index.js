@@ -5,7 +5,7 @@ const Employee = require("./models/employee");
 
 const main = async () => {
   connection.connect();
-  await Employee.create("Johnny", "Miller", "clerk", "Jeff");
+  //   await Employee.create("Johnny", "Miller", "clerk", "Jeff", "Hazlett");
   //   const departments = await Department.getAll();
   //   console.log(departments);
   const employees = await Employee.getAll();
