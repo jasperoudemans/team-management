@@ -10,6 +10,7 @@ const cTable = require("console.table");
 const addDepartment = require("./controllers/addDepartment");
 const addRole = require("./controllers/addRole");
 const addEmployee = require("./controllers/addEmployee");
+const updateEmployeeRole = require("./controllers/updateEmployeeRole");
 
 const menuQuestions = [
   {
@@ -60,6 +61,7 @@ const main = async () => {
         break;
       }
       case "Update an employee role": {
+        await updateEmployeeRole();
         break;
       }
       case "Quit": {
