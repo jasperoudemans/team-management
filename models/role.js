@@ -8,4 +8,19 @@ const getAll = async () => {
   return roles;
 };
 
-module.exports = { getAll };
+const create = async (name, salary, department_name) => {
+  const [ids] = await connection
+    .promise()
+    .query("SELECT id FROM department WHERE name = ?", [department_name]);
+  const department_id = ids[0].id;
+  if (!department_id) throw new Error("Not a valid department");
+  await connection
+    .promise()
+    .query("INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)", [
+      name,
+      salary,
+      department_id,
+    ]);
+};
+
+module.exports = { getAll, create };

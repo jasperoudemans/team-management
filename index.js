@@ -5,13 +5,13 @@ const Employee = require("./models/employee");
 
 const main = async () => {
   connection.connect();
-  await Department.create("hardware");
-  const departments = await Department.getAll();
-  console.log(departments);
+  await Role.create("flipper", 5, "hardware");
+  //   const departments = await Department.getAll();
+  //   console.log(departments);
   const roles = await Role.getAll();
   console.log(roles);
-  const employees = await Employee.getAll();
-  console.log(employees);
+  //   const employees = await Employee.getAll();
+  //   console.log(employees);
   connection.end();
 };
 
