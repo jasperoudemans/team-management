@@ -38,4 +38,13 @@ const create = async (f_name, l_name, role, manager_fname, manager_lname) => {
     );
 };
 
-module.exports = { getAll, create };
+const updateRole = async (employee_id, newRole) => {
+  await connection
+    .promise()
+    .query(`UPDATE employee SET role_id = ? WHERE id = ?`, [
+      newRole,
+      employee_id,
+    ]);
+};
+
+module.exports = { getAll, create, updateRole };
