@@ -5,6 +5,7 @@ const Employee = require("./models/employee");
 const inquirer = require("inquirer");
 const viewAllDepartments = require("./controllers/viewAllDepartments");
 const viewAllRoles = require("./controllers/viewAllRoles");
+const viewAllEmployees = require("./controllers/viewAllEmployees");
 const cTable = require("console.table");
 
 const menuQuestions = [
@@ -40,6 +41,7 @@ const main = async () => {
         break;
       }
       case "View all employees": {
+        await viewAllEmployees();
         break;
       }
       case "Add a department": {
