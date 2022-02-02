@@ -70,15 +70,6 @@ const main = async () => {
       }
     }
   }
-  //   await Employee.create("Johnny", "Miller", "clerk", "Jeff", "Hazlett");
-  //   const departments = await Department.getAll();
-  //   console.log(departments);
-  //   await Employee.updateRole(6, 1);
-  //   const employees = await Employee.getAll();
-  //   console.log(employees);
-
-  //   const employees = await Employee.getAll();
-  //   console.log(employees);
   connection.end();
 };
 
