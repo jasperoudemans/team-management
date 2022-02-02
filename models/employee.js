@@ -26,7 +26,7 @@ const create = async (f_name, l_name, role, manager_fname, manager_lname) => {
       manager_fname,
       manager_lname,
     ]);
-  console.log(manager_id);
+
   const [role_id] = await connection
     .promise()
     .query("SELECT id FROM  role WHERE title = ?", [role]);
