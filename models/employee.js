@@ -19,4 +19,20 @@ const getAll = async () => {
   return employees;
 };
 
-module.exports = { getAll };
+const create = async (f_name, l_name, role, manager_fname) => {
+  const [manager_id] = await connection
+    .promise()
+    .query("SELECT id FROM employee WHERE first_name = ?", [manager_fname]);
+  console.log(manager_id);
+  const [role_id] = await connection
+    .promise()
+    .query("SELECT id FROM  role WHERE title = ?", [role]);
+  await connection
+    .promise()
+    .query(
+      "INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)",
+      [f_name, l_name, role_id[0].id, manager_id[0].id]
+    );
+};
+
+module.exports = { getAll, create };
