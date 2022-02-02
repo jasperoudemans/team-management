@@ -8,6 +8,7 @@ const viewAllRoles = require("./controllers/viewAllRoles");
 const viewAllEmployees = require("./controllers/viewAllEmployees");
 const cTable = require("console.table");
 const addDepartment = require("./controllers/addDepartment");
+const addRole = require("./controllers/addRole");
 
 const menuQuestions = [
   {
@@ -50,6 +51,7 @@ const main = async () => {
         break;
       }
       case "Add a role": {
+        await addRole();
         break;
       }
       case "Add an employee": {
